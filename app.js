@@ -319,12 +319,10 @@ function convertTemperature(temp, unit) {
 var cart = [];
 
 function addItem(name, price) {
-  // Create an object and push it into the array
   cart.push({ name: name, price: price });
 }
 
 function removeItem(name) {
-  // Filter the array to keep everything EXCEPT the item we want to remove
   cart = cart.filter(function(item) {
     return item.name !== name;
   });
@@ -340,13 +338,11 @@ function calculateTotal() {
 
 function applyDiscount(percent) {
   var total = calculateTotal();
-  // Formula: Total - (Total * (Percent / 100))
   var discountedPrice = total - (total * (percent / 100));
   return discountedPrice;
 }
 
 function listItems() {
-  // Map creates a new array containing only the names
   return cart.map(function(item) {
     return item.name;
   });
